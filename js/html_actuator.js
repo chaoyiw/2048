@@ -112,6 +112,9 @@ HTMLActuator.prototype.updateScore = function (score) {
   this.scoreContainer.textContent = this.score;
 
   if (difference > 0) {
+    if (difference >= 8)
+      document.getElementById('audio_wan').play();
+
     var addition = document.createElement("div");
     addition.classList.add("score-addition");
     addition.textContent = "+" + difference;
